@@ -24,6 +24,7 @@ package com.iluwatar.caching;
 
 import java.text.ParseException;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.bson.Document;
 
@@ -43,13 +44,13 @@ import com.mongodb.client.model.UpdateOptions;
  * during runtime (createVirtualDB()).</p>
  * 
  */
-public class DbManager {
+public final class DbManager {
 
   private static MongoClient mongoClient;
   private static MongoDatabase db;
   private static boolean useMongoDB;
 
-  private static HashMap<String, UserAccount> virtualDB;
+  private static Map<String, UserAccount> virtualDB;
 
   private DbManager() {
   }

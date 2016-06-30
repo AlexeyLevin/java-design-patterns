@@ -37,7 +37,7 @@ import com.iluwatar.flux.store.Store;
  * Dispatcher sends Actions to registered Stores.
  *
  */
-public class Dispatcher {
+public final class Dispatcher {
 
   private static Dispatcher instance = new Dispatcher();
 
@@ -71,6 +71,6 @@ public class Dispatcher {
   }
 
   private void dispatchAction(Action action) {
-    stores.stream().forEach((store) -> store.onAction(action));
+    stores.stream().forEach(store -> store.onAction(action));
   }
 }

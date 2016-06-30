@@ -40,7 +40,7 @@ public class ReaderWriterLock implements ReadWriteLock {
 
   private Object readerMutex = new Object();
 
-  private int currentReaderCount = 0;
+  private int currentReaderCount;
 
   /**
    * Global mutex is used to indicate that whether reader or writer gets the lock in the moment.
@@ -89,7 +89,7 @@ public class ReaderWriterLock implements ReadWriteLock {
     return globalMutex.isEmpty();
   }
 
-  private void waitUninterruptibly(Object o) {
+  private static void waitUninterruptibly(Object o) {
     try {
       o.wait();
     } catch (InterruptedException e) {

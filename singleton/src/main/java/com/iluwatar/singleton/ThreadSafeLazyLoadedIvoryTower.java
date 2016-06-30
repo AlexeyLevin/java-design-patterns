@@ -29,9 +29,9 @@ package com.iluwatar.singleton;
  * Note: if created by reflection then a singleton will not be created but multiple options in the
  * same classloader
  */
-public class ThreadSafeLazyLoadedIvoryTower {
+public final class ThreadSafeLazyLoadedIvoryTower {
 
-  private static ThreadSafeLazyLoadedIvoryTower instance = null;
+  private static ThreadSafeLazyLoadedIvoryTower instance;
 
   private ThreadSafeLazyLoadedIvoryTower() {}
 
